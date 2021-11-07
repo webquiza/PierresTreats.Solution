@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model PierresTreats.Models.Flavor
 
 <h2>Are you sure you want to delete this?</h2>
 
@@ -11,4 +11,5 @@
 {
   <input type="submit" value="Delete" />
 }
-@Html.ActionLink("Back to List", "Index")
+<p>@Html.ActionLink("Back to List", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
