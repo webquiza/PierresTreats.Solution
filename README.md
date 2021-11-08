@@ -20,13 +20,9 @@
 
 _This MVC web application has the following functionality:_
 
-* _._
-* _._
-* _._
-* _._
-* _._
-* _._
-* _._
+* _The application has user authentication. A user can log in and log out. Only logged in users have create, update and delete functionality. All users have read functionality_
+* _There is a many-to-many relationship between Treats and Flavors. A treat can have many flavors and a flavor can have many treats._
+* _The user can navigate to a splash page that lists all treats and flavors. The user can click on an individual treat or flavor and see all the treats/flavors that belong to it._
 
 ## Setup/Installation Requirements
 
