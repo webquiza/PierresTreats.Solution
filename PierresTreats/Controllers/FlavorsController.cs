@@ -56,7 +56,7 @@ namespace PierresTreats.Controllers
     public ActionResult Details(int id)
     {
       var thisFlavor = _db.Flavors
-          .Include(flavor => flavorJoinEntities)
+          .Include(flavor => flavor.JoinEntities)
           .ThenInclude(join => join.Treat)
           .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
@@ -93,7 +93,7 @@ namespace PierresTreats.Controllers
     {
       if (TreatId != 0)
       {
-      _db.TreatFlavor.Add(new TreatItem() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+      _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavor.FlavorId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -109,7 +109,7 @@ namespace PierresTreats.Controllers
     public ActionResult DeleteConfirmed(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-      _db.Items.Remove(thisItem);
+      _db.Flavors.Remove(thisFlavor);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -118,7 +118,7 @@ namespace PierresTreats.Controllers
     public ActionResult DeleteTreat(int joinId)
     {
       var joinEntry = _db.TreatFlavor.FirstOrDefault(entry => entry.TreatFlavorId == joinId);
-      _db.TreaFlavor.Remove(joinEntry);
+      _db.TreatFlavor.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
