@@ -14,6 +14,7 @@
 * _Entity Framework_
 * _Pomelo Entity Framework_
 * _MySQL Workbench_
+* _Identity_
 * _Git_
 
 ## Description
